@@ -14,6 +14,8 @@ public string transitionName;
 		{
 			PlayerController.instance.transform.position = transform.position;
 		}
+
+		UIFade.instance.FadeFromBlack();
 	}
 	
 	// Update is called once per frame
