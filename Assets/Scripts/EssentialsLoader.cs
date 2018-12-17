@@ -6,6 +6,7 @@ public class EssentialsLoader : MonoBehaviour {
 
 	[SerializeField] GameObject UIScreen;
 	[SerializeField] GameObject player;
+	public GameObject gameMan;
 
 	// Use this for initialization
 	void Start () 
@@ -19,6 +20,11 @@ public class EssentialsLoader : MonoBehaviour {
 		{
 			PlayerController clone = Instantiate(player).GetComponent<PlayerController>();
 			PlayerController.instance = clone;
+		}
+
+		if(GameManager.instance == null)
+		{
+			Instantiate(gameMan);
 		}
 		
 		
