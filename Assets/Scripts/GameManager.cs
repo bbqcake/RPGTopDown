@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
 	 public string[] itemsHeld;
 	 public int[] numberOfItems;
 	 public Item[] referenceItems;
+	 public int currentGold;
 
 	 public static GameManager instance;
 
@@ -23,6 +24,8 @@ public class GameManager : MonoBehaviour
 		instance = this;
 
 		DontDestroyOnLoad(gameObject);	
+
+		SortItems();
 	}
 	
 	// Update is called once per frame
