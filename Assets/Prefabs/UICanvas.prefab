@@ -1570,7 +1570,7 @@ GameObject:
   - component: {fileID: 222661989175700044}
   - component: {fileID: 114332695042801186}
   m_Layer: 5
-  m_Name: Text (1)
+  m_Name: Value
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2938,7 +2938,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1363277049686130
 GameObject:
   m_ObjectHideFlags: 1
@@ -3149,7 +3149,7 @@ GameObject:
   - component: {fileID: 222885377237297216}
   - component: {fileID: 114135615793241080}
   m_Layer: 5
-  m_Name: Text (1)
+  m_Name: Value
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8194,7 +8194,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1925557211165296
 GameObject:
   m_ObjectHideFlags: 1
@@ -19787,6 +19787,95 @@ MonoBehaviour:
   sellMenu: {fileID: 1356925036175630}
   goldText: {fileID: 114295247074880774}
   itemsForSale: []
+  buyItemButtons:
+  - {fileID: 114494077925164556}
+  - {fileID: 114893965915472460}
+  - {fileID: 114041640462776460}
+  - {fileID: 114225983531718318}
+  - {fileID: 114955743950247310}
+  - {fileID: 114602228644631728}
+  - {fileID: 114629882066608154}
+  - {fileID: 114960872121283944}
+  - {fileID: 114968269555052092}
+  - {fileID: 114974310126983382}
+  - {fileID: 114072206283273756}
+  - {fileID: 114314937479119588}
+  - {fileID: 114275447984642692}
+  - {fileID: 114839690064636716}
+  - {fileID: 114141035986375986}
+  - {fileID: 114669799022421092}
+  - {fileID: 114504210476143108}
+  - {fileID: 114605494113652272}
+  - {fileID: 114405750572719248}
+  - {fileID: 114732849016547954}
+  - {fileID: 114738685363071930}
+  - {fileID: 114886132325388912}
+  - {fileID: 114594334167454276}
+  - {fileID: 114352895051618688}
+  - {fileID: 114929664728291632}
+  - {fileID: 114434639113889548}
+  - {fileID: 114098263530788344}
+  - {fileID: 114263989321541902}
+  - {fileID: 114926996910226296}
+  - {fileID: 114411611210100294}
+  - {fileID: 114282941784425546}
+  - {fileID: 114267816388647502}
+  - {fileID: 114706937773737146}
+  - {fileID: 114556286557380308}
+  - {fileID: 114655277932735226}
+  - {fileID: 114461341417610404}
+  - {fileID: 114644468727265434}
+  - {fileID: 114404887977499908}
+  - {fileID: 114969812322886538}
+  - {fileID: 114844733614354776}
+  sellItemButtons:
+  - {fileID: 114580389283528546}
+  - {fileID: 114035591173397290}
+  - {fileID: 114817039896559614}
+  - {fileID: 114640226474734562}
+  - {fileID: 114776112998203832}
+  - {fileID: 114870461258307232}
+  - {fileID: 114025096604399828}
+  - {fileID: 114912902614611666}
+  - {fileID: 114288155818283028}
+  - {fileID: 114537192220023114}
+  - {fileID: 114395726543064728}
+  - {fileID: 114236652651641306}
+  - {fileID: 114312528520387656}
+  - {fileID: 114757992544349120}
+  - {fileID: 114378542934495378}
+  - {fileID: 114446575477103242}
+  - {fileID: 114324618645599038}
+  - {fileID: 114716372829147690}
+  - {fileID: 114330490466590616}
+  - {fileID: 114584722277498054}
+  - {fileID: 114063291622446738}
+  - {fileID: 114027241758082156}
+  - {fileID: 114125490685373028}
+  - {fileID: 114651334925993406}
+  - {fileID: 114045611948666774}
+  - {fileID: 114942474361641554}
+  - {fileID: 114172167168499990}
+  - {fileID: 114636097745926728}
+  - {fileID: 114699306062544412}
+  - {fileID: 114057836397532362}
+  - {fileID: 114351302712007092}
+  - {fileID: 114902419317915276}
+  - {fileID: 114576585777384500}
+  - {fileID: 114160580330000356}
+  - {fileID: 114331857268495184}
+  - {fileID: 114147271921787878}
+  - {fileID: 114373191989038928}
+  - {fileID: 114954832308630858}
+  - {fileID: 114779282963062728}
+  - {fileID: 114775366710986076}
+  selectedItem: {fileID: 0}
+  buyItemName: {fileID: 114180939111836990}
+  buyItemDescription: {fileID: 114429273492355764}
+  buyItemValue: {fileID: 114332695042801186}
+  sellItemName: {fileID: 114788276495984066}
+  sellItemDescription: {fileID: 114399200739603260}
+  sellItemValue: {fileID: 114135615793241080}
 --- !u!114 &114408967674946388
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -26659,7 +26748,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114569094944440752}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 114405772763051732}
+        m_MethodName: Sellitem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &114693522769895582
@@ -29308,8 +29408,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114058927542887940}
-        m_MethodName: OpenItemCharacterChoice
+      - m_Target: {fileID: 114405772763051732}
+        m_MethodName: BuyItem
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -37519,7 +37619,7 @@ RectTransform:
   m_Children:
   - {fileID: 224363446741185970}
   m_Father: {fileID: 224582693925751128}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -38420,7 +38520,6 @@ RectTransform:
   - {fileID: 224873958305239260}
   - {fileID: 224918264102646334}
   - {fileID: 224582693925751128}
-  - {fileID: 224800875177647978}
   m_Father: {fileID: 224829700939883840}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -39687,13 +39786,13 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 224480144125765092}
-  m_RootOrder: 3
+  m_Father: {fileID: 224336909324951230}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -390, y: -360.90002}
-  m_SizeDelta: {x: -1353.1201, y: -844.02014}
+  m_AnchoredPosition: {x: -390, y: 0}
+  m_SizeDelta: {x: -1353.1201, y: -122.22015}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224253299898568026
 RectTransform:
@@ -40567,6 +40666,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224729170619743298}
+  - {fileID: 224252913094711526}
   m_Father: {fileID: 224480144125765092}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -41977,7 +42077,6 @@ RectTransform:
   - {fileID: 224881001478753494}
   - {fileID: 224066726033327096}
   - {fileID: 224336909324951230}
-  - {fileID: 224252913094711526}
   m_Father: {fileID: 224829700939883840}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -42779,6 +42878,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 224800875177647978}
   - {fileID: 224022123985818376}
   m_Father: {fileID: 224110612080956660}
   m_RootOrder: 2
@@ -44864,13 +44964,13 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 224110612080956660}
-  m_RootOrder: 3
+  m_Father: {fileID: 224582693925751128}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -390, y: -360.90002}
-  m_SizeDelta: {x: -1353.1201, y: -844.02014}
+  m_AnchoredPosition: {x: -390, y: 0}
+  m_SizeDelta: {x: -1353.1201, y: -122.22015}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224802929813592468
 RectTransform:

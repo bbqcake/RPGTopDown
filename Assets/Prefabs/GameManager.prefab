@@ -52,6 +52,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4030011411874372}
   - component: {fileID: 114927589940343702}
+  - component: {fileID: 114428938486351364}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -74,7 +75,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4030011411874372
 Transform:
   m_ObjectHideFlags: 1
@@ -159,6 +160,24 @@ MonoBehaviour:
   equippedWpn: 
   equippedArmr: 
   charIamge: {fileID: 21300000, guid: bdf8c4bb651a39f44beaa1b46ceaa1f6, type: 3}
+--- !u!114 &114428938486351364
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1934757426126014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 240f229c456f87b428b576a3eb7daa2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questMarkerNames:
+  - 
+  - fight the demon
+  - enter the cave
+  - quest test
+  - save the world
+  questMarkerComplete: 
 --- !u!114 &114512009724275810
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -231,6 +250,57 @@ MonoBehaviour:
   gameMenuOpen: 0
   dialogActive: 0
   fadingBetweenAreas: 0
+  shopActive: 0
+  itemsHeld:
+  - Health Potion
+  - 
+  - Iron Armor
+  - Wooden Sword
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - Mana Potion
+  numberOfItems: 0a000000000000000100000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000003000000
+  referenceItems:
+  - {fileID: 114341570670987840, guid: dbbd67993eef37c4b925922c7b7ac7d6, type: 2}
+  - {fileID: 114769405900553240, guid: 4535d41c1ab751641945749f562c776a, type: 2}
+  - {fileID: 114079957628257498, guid: 46bfeee69b3ff564899f6b88aaf321fc, type: 2}
+  - {fileID: 114079957628257498, guid: ed9447683eb62ae49a3c69219980be6f, type: 2}
+  - {fileID: 114454872230560604, guid: 9fb9cacb58e66f349b4f3c51ef7d7da2, type: 2}
+  - {fileID: 114131735012911612, guid: 4f9b0f26eda848f4d8df6cc60c26e8e6, type: 2}
+  currentGold: 0
   playerStats:
   - {fileID: 114345754747631970}
   - {fileID: 114512009724275810}
