@@ -189,7 +189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 791d67787de532c4b88b49cd0e2b08a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  charName: Woody
+  charName: BillyJean
   playerLevel: 3
   currentEXP: 540
   expToNextlevel: 
@@ -300,7 +300,7 @@ MonoBehaviour:
   - {fileID: 114079957628257498, guid: ed9447683eb62ae49a3c69219980be6f, type: 2}
   - {fileID: 114454872230560604, guid: 9fb9cacb58e66f349b4f3c51ef7d7da2, type: 2}
   - {fileID: 114131735012911612, guid: 4f9b0f26eda848f4d8df6cc60c26e8e6, type: 2}
-  currentGold: 0
+  currentGold: 100
   playerStats:
   - {fileID: 114345754747631970}
   - {fileID: 114512009724275810}

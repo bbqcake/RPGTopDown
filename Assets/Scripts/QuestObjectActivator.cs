@@ -32,7 +32,7 @@ public class QuestObjectActivator : MonoBehaviour
 	{
 		if(QuestManager.instance.CheckIfComplete(questToCheck))
 		{
-			objectToActivate.SetActive(activeIfComplete);
+			objectToActivate.SetActive(activeIfComplete);			
 		}
-	}
+	}	
 }

@@ -150,7 +150,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4859328717260850, guid: 8866d54701ca8024f9a94429567e100c, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4093383012470422, guid: 8866d54701ca8024f9a94429567e100c, type: 2}
       propertyPath: m_LocalPosition.x
@@ -160,6 +160,25 @@ Prefab:
         type: 2}
       propertyPath: areaToLoad
       value: Town
+      objectReference: {fileID: 0}
+    - target: {fileID: 114889731410192692, guid: 8866d54701ca8024f9a94429567e100c,
+        type: 2}
+      propertyPath: areaTransitionName
+      value: Countryside-1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114650527997809916, guid: 8866d54701ca8024f9a94429567e100c,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114650527997809916, guid: 8866d54701ca8024f9a94429567e100c,
+        type: 2}
+      propertyPath: transitionName
+      value: Countryside-1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1574631658513884, guid: 8866d54701ca8024f9a94429567e100c, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8866d54701ca8024f9a94429567e100c, type: 2}
@@ -212,6 +231,11 @@ Prefab:
       propertyPath: m_Name
       value: CustomCamera
       objectReference: {fileID: 0}
+    - target: {fileID: 114145831033569810, guid: 87808281034830345b82924ab61a4afb,
+        type: 2}
+      propertyPath: musicToPlay
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87808281034830345b82924ab61a4afb, type: 2}
   m_IsPrefabAsset: 0
@@ -256,48 +280,6 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 726a7e7f64fdec945896208f9b4b42f0, type: 2}
-  m_IsPrefabAsset: 0
---- !u!1001 &644139631
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4030011411874372, guid: ce57cf4b5e6456c4fb7a8d01df4206cc, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4030011411874372, guid: ce57cf4b5e6456c4fb7a8d01df4206cc, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4030011411874372, guid: ce57cf4b5e6456c4fb7a8d01df4206cc, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4030011411874372, guid: ce57cf4b5e6456c4fb7a8d01df4206cc, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4030011411874372, guid: ce57cf4b5e6456c4fb7a8d01df4206cc, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4030011411874372, guid: ce57cf4b5e6456c4fb7a8d01df4206cc, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4030011411874372, guid: ce57cf4b5e6456c4fb7a8d01df4206cc, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4030011411874372, guid: ce57cf4b5e6456c4fb7a8d01df4206cc, type: 2}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: ce57cf4b5e6456c4fb7a8d01df4206cc, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &696882735
 GameObject:
@@ -11386,7 +11368,7 @@ Transform:
   - {fileID: 860175630}
   - {fileID: 696882736}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1739337123
 Prefab:

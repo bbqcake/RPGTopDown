@@ -8,6 +8,8 @@ public class EssentialsLoader : MonoBehaviour {
 	[SerializeField] GameObject player;
 	public GameObject gameMan;
 
+	public GameObject audioPlayer;
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -26,6 +28,13 @@ public class EssentialsLoader : MonoBehaviour {
 		{
 			Instantiate(gameMan);
 		}
+
+		if(AudioManager.instance == null)
+		{
+			Instantiate(audioPlayer);
+		}
+
+		
 		
 		
 		

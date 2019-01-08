@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114145831033569810}
   - component: {fileID: 81646106773445294}
   m_Layer: 0
-  m_Name: CustomCamera 1
+  m_Name: CustomCamera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -102,3 +102,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 4811562767113534, guid: 09cc76efb2ad68a4d9ad13af16516385, type: 2}
   theMap: {fileID: 0}
+  musicToPlay: 0

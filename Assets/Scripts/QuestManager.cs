@@ -26,6 +26,17 @@ public class QuestManager : MonoBehaviour {
 			MarkQuestComplete("quest test");
 			MarkQuestIncomplete("fight the demon");
 		}
+
+		if(Input.GetKeyDown(KeyCode.O))
+		{
+			SaveQuestData();
+		}
+
+		if(Input.GetKeyDown(KeyCode.P))
+		{
+			LoadQuestData();
+		}
+
 		
 	}
 
@@ -79,4 +90,41 @@ public class QuestManager : MonoBehaviour {
 			}
 		}
 	}
+
+	public void SaveQuestData()
+	{
+		for(int i = 0; i < questMarkerNames.Length; i++)
+		{
+			if(questMarkerComplete[i])
+			{
+				PlayerPrefs.SetInt("QuestMarker_" + questMarkerNames[i], 1); // 1 is true. we cant use bools here
+			}
+			else
+			{
+				PlayerPrefs.SetInt("QuestMarker_" + questMarkerNames[i], 0);
+			}
+		}
+	}
+
+	public void LoadQuestData()
+	{
+		for(int i = 0; i < questMarkerNames.Length; i++)
+		{
+			int valueToSet = 0;
+			if(PlayerPrefs.HasKey("QuestMarker_" + questMarkerNames[i]))
+			{
+				valueToSet = PlayerPrefs.GetInt("QuestMarker_" + questMarkerNames[i]);
+			}
+
+			if(valueToSet == 0)
+			{
+				questMarkerComplete[i] = false;
+			}
+			else
+			{
+				questMarkerComplete[i] = true;
+			}
+		}
+	}
+
 }

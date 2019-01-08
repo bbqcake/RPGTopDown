@@ -325,6 +325,11 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: -1.26
       objectReference: {fileID: 0}
+    - target: {fileID: 114650527997809916, guid: 8866d54701ca8024f9a94429567e100c,
+        type: 2}
+      propertyPath: transitionName
+      value: Shop
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8866d54701ca8024f9a94429567e100c, type: 2}
   m_IsPrefabAsset: 0
@@ -371,6 +376,8 @@ MonoBehaviour:
   UIScreen: {fileID: 1454095497274270, guid: 0a3d371e923b6da4eb52e69afec18f2f, type: 2}
   player: {fileID: 1760394866918850, guid: 09cc76efb2ad68a4d9ad13af16516385, type: 2}
   gameMan: {fileID: 1934757426126014, guid: ce57cf4b5e6456c4fb7a8d01df4206cc, type: 2}
+  audioPlayer: {fileID: 1755976845415990, guid: 048808fe70df2664e8b5641dc54b0778,
+    type: 2}
 --- !u!1 &1247336551
 GameObject:
   m_ObjectHideFlags: 0
@@ -4807,7 +4814,7 @@ Transform:
   m_Children:
   - {fileID: 1389488047}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1389488046
 GameObject:
@@ -4968,7 +4975,7 @@ Transform:
   m_Children:
   - {fileID: 739094627}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1659525488
 GameObject:
@@ -28831,7 +28838,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1696491774 stripped
 GameObject:
@@ -31179,48 +31186,6 @@ TilemapCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 1
   m_Offset: {x: 0, y: 0}
---- !u!1001 &1760708753
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4030011411874372, guid: ce57cf4b5e6456c4fb7a8d01df4206cc, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4030011411874372, guid: ce57cf4b5e6456c4fb7a8d01df4206cc, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4030011411874372, guid: ce57cf4b5e6456c4fb7a8d01df4206cc, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4030011411874372, guid: ce57cf4b5e6456c4fb7a8d01df4206cc, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4030011411874372, guid: ce57cf4b5e6456c4fb7a8d01df4206cc, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4030011411874372, guid: ce57cf4b5e6456c4fb7a8d01df4206cc, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4030011411874372, guid: ce57cf4b5e6456c4fb7a8d01df4206cc, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4030011411874372, guid: ce57cf4b5e6456c4fb7a8d01df4206cc, type: 2}
-      propertyPath: m_RootOrder
-      value: 8
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: ce57cf4b5e6456c4fb7a8d01df4206cc, type: 2}
-  m_IsPrefabAsset: 0
 --- !u!1001 &1763976200
 Prefab:
   m_ObjectHideFlags: 0
@@ -31269,6 +31234,11 @@ Prefab:
       propertyPath: theMap
       value: 
       objectReference: {fileID: 1659525491}
+    - target: {fileID: 114145831033569810, guid: 87808281034830345b82924ab61a4afb,
+        type: 2}
+      propertyPath: musicToPlay
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87808281034830345b82924ab61a4afb, type: 2}
   m_IsPrefabAsset: 0
@@ -31318,12 +31288,17 @@ Prefab:
     - target: {fileID: 114889731410192692, guid: 8866d54701ca8024f9a94429567e100c,
         type: 2}
       propertyPath: areaTransitionName
-      value: CountrySide-1
+      value: Countryside-1
       objectReference: {fileID: 0}
     - target: {fileID: 114889731410192692, guid: 8866d54701ca8024f9a94429567e100c,
         type: 2}
       propertyPath: areaToLoad
       value: CountrySide
+      objectReference: {fileID: 0}
+    - target: {fileID: 114650527997809916, guid: 8866d54701ca8024f9a94429567e100c,
+        type: 2}
+      propertyPath: transitionName
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8866d54701ca8024f9a94429567e100c, type: 2}
