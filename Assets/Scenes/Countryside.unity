@@ -174,7 +174,7 @@ Prefab:
     - target: {fileID: 114650527997809916, guid: 8866d54701ca8024f9a94429567e100c,
         type: 2}
       propertyPath: transitionName
-      value: Countryside-1
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1574631658513884, guid: 8866d54701ca8024f9a94429567e100c, type: 2}
       propertyPath: m_IsActive

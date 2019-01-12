@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class AreaExit : MonoBehaviour {
 
-	[SerializeField] string areaToLoad;
+	public string areaToLoad;
 
 	public string areaTransitionName;
 
@@ -50,3 +50,5 @@ public class AreaExit : MonoBehaviour {
 		}
 	}
 }
+
+
