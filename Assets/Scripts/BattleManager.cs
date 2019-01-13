@@ -20,6 +20,8 @@ public class BattleManager : MonoBehaviour
 
 	public GameObject uiButtonsHolder;
 
+	public BattleMove[] movesList;
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -206,6 +208,32 @@ public class BattleManager : MonoBehaviour
 
 		int selectedTarget = players[Random.Range(0, players.Count)];
 
-		activeBattlers[selectedTarget].currentHP -= 20;
+		//activeBattlers[selectedTarget].currentHP -= 20;
+
+		int selectAttack = Random.Range(0, activeBattlers[currentTurn].movesAvailable.Length);
+		int movePower = 0;
+		for(int i = 0; i < movesList.Length; i++)
+		{
+			if(movesList[i].moveName == activeBattlers[currentTurn].movesAvailable[selectAttack])
+			{
+				Instantiate(movesList[i].theEffect, activeBattlers[selectedTarget].transform.position, activeBattlers[selectedTarget].transform.rotation);
+				movePower = movesList[i].movePower;
+			}
+		}
+
+		DealDamage(selectedTarget, movePower);
+	}
+
+	public void DealDamage(int target, int movePower)
+	{
+		float atkPwr = activeBattlers[currentTurn].strength + activeBattlers[currentTurn].wpnPower;
+		float defPwr = activeBattlers[target].defence + activeBattlers[target].armrPower;
+
+		float damageCalc = (atkPwr / defPwr) * movePower * Random.Range(.9f, 1.1f);
+		int damageToGive = Mathf.RoundToInt(damageCalc);
+
+		Debug.Log(activeBattlers[currentTurn].charName + " is dealing " + damageCalc + "(" + damageToGive + ") damage to " + activeBattlers[target].charName);
+
+		activeBattlers[target].currentHP -= damageToGive;
 	}
 }
