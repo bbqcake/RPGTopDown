@@ -21889,6 +21889,22 @@ MonoBehaviour:
     moveCost: 15
     theEffect: {fileID: 114095425390160486, guid: 8eef7f17611ec8d4d97591734fbf173f,
       type: 2}
+  enemyAttackEffect: {fileID: 1990049962589632, guid: 993f685592fc6a04288788ccef684c43,
+    type: 2}
+  damageNumber: {fileID: 114907362497896520, guid: 898058cbfd3553142993550036aeccd2,
+    type: 2}
+  playerName:
+  - {fileID: 1298688845}
+  - {fileID: 1276947022}
+  - {fileID: 1579637143}
+  playerHP:
+  - {fileID: 554635494}
+  - {fileID: 1486631288}
+  - {fileID: 1508305648}
+  playerMP:
+  - {fileID: 1029587495}
+  - {fileID: 297613920}
+  - {fileID: 1039198453}
 --- !u!4 &1316531622
 Transform:
   m_ObjectHideFlags: 0

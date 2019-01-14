@@ -11,12 +11,12 @@ public class AttackEffect : MonoBehaviour
 	void Start () 
 	{
 		AudioManager.instance.PlaySFX(soundEffect);
-		
+		Destroy(gameObject, effectLength);
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
-		Destroy(gameObject, effectLength);
+		
 	}
 }
