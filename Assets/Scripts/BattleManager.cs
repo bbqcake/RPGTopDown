@@ -27,6 +27,8 @@ public class BattleManager : MonoBehaviour
 	public DamageNumber damageNumber;
 
 	public Text[] playerName, playerHP, playerMP;
+	public GameObject targetMenu;
+	public BattleTargetButton[] targetButtons;
 
 	// Use this for initialization
 	void Start () 
@@ -190,9 +192,23 @@ public class BattleManager : MonoBehaviour
 
 			battleScene.SetActive(false);
 			GameManager.instance.battleActive = false;
-			battleActive = false;			
+			battleActive = false;	
+			}	
+			
+			else
+			{
+				while(activeBattlers[currentTurn].currentHP == 0) // we use while instead of if so it checks it every turn
+				{
+					currentTurn++;
+					if(currentTurn >= activeBattlers.Count)
+					{
+						currentTurn = 0;
+					}
+				
+				}
+					
+			}
 		}
-	}
 
 	public IEnumerator EnemyMoveCo()
 	{
@@ -278,6 +294,59 @@ public class BattleManager : MonoBehaviour
 				playerName[i].gameObject.SetActive(false);
 			}
 			
+		}
+	}
+
+	public void PlayerAttack(string moveName ,int selectedTarget)
+	{
+		int movePower = 0;
+		for(int i = 0; i < movesList.Length; i++)
+		{
+			if(movesList[i].moveName == moveName)
+			{
+				Instantiate(movesList[i].theEffect, activeBattlers[selectedTarget].transform.position, activeBattlers[selectedTarget].transform.rotation);
+				movePower = movesList[i].movePower;
+			}
+		}
+
+		Instantiate(enemyAttackEffect, activeBattlers[currentTurn].transform.position, activeBattlers[currentTurn].transform.rotation);
+
+		DealDamage(selectedTarget, movePower);
+
+		uiButtonsHolder.SetActive(false);
+		targetMenu.SetActive(false);
+		
+		NextTurn();
+
+	}
+
+	public void OpenTargetMenu(string moveName)
+	{
+		targetMenu.SetActive(true);
+		
+		List<int> Enemies = new List<int>();
+
+		for(int i = 0; i < activeBattlers.Count; i++)
+		{
+			if (!activeBattlers[i].isPlayer)
+			{
+				Enemies.Add(i);
+			}
+		}
+
+		for(int i = 0; i < targetButtons.Length; i++)
+		{
+			if(Enemies.Count > i)
+			{
+				targetButtons[i].gameObject.SetActive(true);
+				targetButtons[i].moveName = moveName;
+				targetButtons[i].activeBattlerTarget = Enemies[i];
+				targetButtons[i].targetName.text = activeBattlers[Enemies[i]].charName;
+			}
+			else
+			{
+				targetButtons[i].gameObject.SetActive(false);
+			}
 		}
 	}
 }
