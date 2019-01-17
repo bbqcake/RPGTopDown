@@ -47,7 +47,7 @@ public class BattleManager : MonoBehaviour
 	{
 		if(Input.GetKeyDown(KeyCode.B))
 		{
-			BattleStart(new string[] {"EyeBall", "Spider", "Skeleton", "Spider"});
+			BattleStart(new string[] {"EyeBall"/* , "Spider", "Skeleton", "Spider"*/});
 		}
 
 		if(battleActive)
@@ -170,12 +170,21 @@ public class BattleManager : MonoBehaviour
 			if(activeBattlers[i].currentHP == 0) 
 			{
 				//handle dead battler
+				if(activeBattlers[i].isPlayer)
+				{
+					activeBattlers[i].theSprite.sprite = activeBattlers[i].deadSprite;
+				}
+				else
+				{					
+					activeBattlers[i].EnemyFade();
+				}
 			}
 			else
 			{
 				if(activeBattlers[i].isPlayer)
 				{
-					allPlayersDead = false;					
+					allPlayersDead = false;	
+					activeBattlers[i].theSprite.sprite = activeBattlers[i].aliveSprite;				
 				}
 				else
 				{
@@ -188,16 +197,16 @@ public class BattleManager : MonoBehaviour
 		{
 			if(allEnemiesDead)
 			{
-				// end battle in victory
+				StartCoroutine(EndBattleCo());
 			}
 			else
 			{
-				// end battle in failure
+				// end battle
 			}
 
-			battleScene.SetActive(false);
+		/* battleScene.SetActive(false);
 			GameManager.instance.battleActive = false;
-			battleActive = false;	
+			battleActive = false;	*/	
 			}	
 			
 			else
@@ -341,7 +350,7 @@ public class BattleManager : MonoBehaviour
 
 		for(int i = 0; i < targetButtons.Length; i++)
 		{
-			if(Enemies.Count > i)
+			if(Enemies.Count > i && activeBattlers[Enemies[i]].currentHP > 0)
 			{
 				targetButtons[i].gameObject.SetActive(true);
 				targetButtons[i].moveName = moveName;
@@ -391,8 +400,9 @@ public class BattleManager : MonoBehaviour
 		if(fleeSucess <= chanceToFlee)
 		{
 			// end battle
-			battleActive = false;
-			battleScene.SetActive(false);
+			//battleActive = false;
+			//battleScene.SetActive(false);
+			StartCoroutine(EndBattleCo());
 		}
 		else
 		{
@@ -400,5 +410,44 @@ public class BattleManager : MonoBehaviour
 			battleNotice.theText.text = "Couldn't escape!";
 			battleNotice.Activate();
 		}
+	}
+
+	public IEnumerator EndBattleCo()
+	{
+		battleActive = false;		
+		uiButtonsHolder.SetActive(false);
+		targetMenu.SetActive(false);
+		magicMenu.SetActive(false);
+		// item menu
+
+		yield return new WaitForSeconds(0.5f);
+		UIFade.instance.FadeToBlack();
+		yield return new WaitForSeconds(1.5f);
+
+		for(int i = 0; i < activeBattlers.Count; i++)
+		{
+			if(activeBattlers[i].isPlayer)
+			{
+				for(int j = 0; j < GameManager.instance.playerStats.Length; j++)
+				{
+					if(activeBattlers[i].charName == GameManager.instance.playerStats[i].charName)
+					{
+						GameManager.instance.playerStats[j].currentHP = activeBattlers[i].currentHP;
+						GameManager.instance.playerStats[j].currentMP = activeBattlers[i].currentMP;
+					}
+				}
+			}
+
+			Destroy(activeBattlers[i].gameObject);
+		}
+
+		UIFade.instance.FadeFromBlack();
+		battleScene.SetActive(false);
+
+		activeBattlers.Clear();
+		currentTurn = 0;
+		GameManager.instance.battleActive = false;
+
+		AudioManager.instance.PlayBGM(FindObjectOfType<CameraController>().musicToPlay);
 	}
 }
