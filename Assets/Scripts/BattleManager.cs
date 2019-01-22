@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class BattleManager : MonoBehaviour 
 {
@@ -35,6 +36,8 @@ public class BattleManager : MonoBehaviour
 
 	public int chanceToFlee = 35;
 
+	public string gameOverScene;
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -47,7 +50,7 @@ public class BattleManager : MonoBehaviour
 	{
 		if(Input.GetKeyDown(KeyCode.B))
 		{
-			BattleStart(new string[] {"EyeBall"/* , "Spider", "Skeleton", "Spider"*/});
+			BattleStart(new string[] {"EyeBall", "Spider", "Skeleton", "Spider"});
 		}
 
 		if(battleActive)
@@ -201,7 +204,7 @@ public class BattleManager : MonoBehaviour
 			}
 			else
 			{
-				// end battle
+				StartCoroutine(GameOverCo());
 			}
 
 		/* battleScene.SetActive(false);
@@ -449,5 +452,15 @@ public class BattleManager : MonoBehaviour
 		GameManager.instance.battleActive = false;
 
 		AudioManager.instance.PlayBGM(FindObjectOfType<CameraController>().musicToPlay);
+	}
+
+	public IEnumerator GameOverCo()
+	{
+		battleActive = false;
+		UIFade.instance.FadeToBlack();
+		yield return new WaitForSeconds(1.5f);
+		battleScene.SetActive(false);
+
+		SceneManager.LoadScene(gameOverScene);
 	}
 }
