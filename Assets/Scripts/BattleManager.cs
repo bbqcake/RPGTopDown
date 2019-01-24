@@ -36,7 +36,13 @@ public class BattleManager : MonoBehaviour
 
 	public int chanceToFlee = 35;
 
+	private bool fleeing = false;
+
 	public string gameOverScene;
+
+	public int rewardXP;
+	public string[] rewardItems;
+	public bool cannotFlee;
 
 	// Use this for initialization
 	void Start () 
@@ -50,7 +56,7 @@ public class BattleManager : MonoBehaviour
 	{
 		if(Input.GetKeyDown(KeyCode.B))
 		{
-			BattleStart(new string[] {"EyeBall", "Spider", "Skeleton", "Spider"});
+			BattleStart(new string[] {"EyeBall", "Spider", "Skeleton", "Spider"}, false);
 		}
 
 		if(battleActive)
@@ -77,10 +83,12 @@ public class BattleManager : MonoBehaviour
 		}
 	}
 
-	public void BattleStart(string[] enemiesToSpawn)
+	public void BattleStart(string[] enemiesToSpawn, bool setCannotFlee)
 	{
 		if(!battleActive)
 		{
+			cannotFlee = setCannotFlee;	
+
 			battleActive = true;
 
 			GameManager.instance.battleActive = true;
@@ -398,20 +406,29 @@ public class BattleManager : MonoBehaviour
 	
 	public void Flee()
 	{
-		int fleeSucess = Random.Range(0,100);
-
-		if(fleeSucess <= chanceToFlee)
+		if(cannotFlee)
 		{
-			// end battle
-			//battleActive = false;
-			//battleScene.SetActive(false);
-			StartCoroutine(EndBattleCo());
+			battleNotice.theText.text = "Can not flee this battle!";
+				battleNotice.Activate();
 		}
 		else
-		{
-			NextTurn();
-			battleNotice.theText.text = "Couldn't escape!";
-			battleNotice.Activate();
+		{		
+			int fleeSucess = Random.Range(0,100);
+
+			if(fleeSucess <= chanceToFlee)
+			{
+				// end battle
+				//battleActive = false;
+				//battleScene.SetActive(false);
+				fleeing = true;
+				StartCoroutine(EndBattleCo());
+			}
+			else
+			{
+				NextTurn();
+				battleNotice.theText.text = "Couldn't escape!";
+				battleNotice.Activate();
+			}
 		}
 	}
 
@@ -449,7 +466,17 @@ public class BattleManager : MonoBehaviour
 
 		activeBattlers.Clear();
 		currentTurn = 0;
-		GameManager.instance.battleActive = false;
+		
+		if (fleeing)
+		{
+			GameManager.instance.battleActive = false;
+			fleeing = false;
+		}
+		else
+		{
+			BattleReward.instance.OpenRewardScreen(rewardXP, rewardItems);
+		}
+
 
 		AudioManager.instance.PlayBGM(FindObjectOfType<CameraController>().musicToPlay);
 	}

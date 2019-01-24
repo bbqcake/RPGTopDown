@@ -5071,6 +5071,7 @@ MonoBehaviour:
   - {fileID: 114205258903030744, guid: 3d27055b038116345bc4aa5465c2f348, type: 2}
   - {fileID: 114520262616376770, guid: f1744e4938e87e24895e7940111e1d28, type: 2}
   - {fileID: 114579186450483652, guid: 29152d806d9ba374086a937678010c10, type: 2}
+  - {fileID: 114336194485828296, guid: a9467e3e624f49349b6d13b3b135151a, type: 2}
   activeBattlers: []
   currentTurn: 0
   turnWaiting: 0
@@ -5139,7 +5140,12 @@ MonoBehaviour:
   - {fileID: 114605446322963080}
   battleNotice: {fileID: 114327017665711830}
   chanceToFlee: 35
-  gameOverScene: 
+  gameOverScene: GameOver
+  rewardXP: 500
+  rewardItems:
+  - Wooden Sword
+  - Iron Armor
+  cannotFlee: 0
 --- !u!114 &114620277865100946
 MonoBehaviour:
   m_ObjectHideFlags: 1
